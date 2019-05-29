@@ -13,11 +13,6 @@ include 'inc/header.php';
   </form>
 </div>
 
-<?php   
-  if ($message) {
-    ?><h2><?php $message ;?></h2><?php
-  }
-?>
 
 <h2><?php $message ;?></h2>
 

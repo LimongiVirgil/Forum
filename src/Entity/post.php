@@ -28,11 +28,7 @@ class Post {
 
   //Les requêtes
 
-  public static function addContent($content) {
-    $bdd = self::connect()->prepare("SELECT * FROM post WHERE content = :content");
-    $bdd->execute(['content' => $content]);
-    $userSQL = $bdd->fetch();
-    $user = new Post($userSQL['id'], $userSQL['content']);
-    return $user;
+  public static function addPost() {
+    
   }
 }
