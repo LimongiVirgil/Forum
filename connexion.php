@@ -16,7 +16,7 @@ if ($_POST["pseudo"] != null and $_POST["mdp"] != null) {
     $_SESSION['user'] = $user ;
     session_write_close();
     var_dump( $_SESSION);
-    header('Location: acceuil.php');
+    header('Location: accueil.php');
 
     function isLoggedIn() : bool {
       return isset($_SESSION['user']);

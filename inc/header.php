@@ -10,7 +10,7 @@
   <h1>Bonjour, Bienvenur sur le forum<h1>
 
   <a href="index.php" class="nav-link">Connexion</a>
-  <a href="incription.php" class="nav-link">Inscription</a>
+  <a href="inscription.php" class="nav-link">Inscription</a>
 
   <?php if (isset($_SESSION['user'])) {
     ?><a href="deconnexion.php" class="nav-link">Déconnexion</a><?php
