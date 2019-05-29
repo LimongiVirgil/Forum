@@ -1,0 +1,16 @@
+{
+    "name": "virgillimongi/test-class",
+    "authors": [
+        {
+            "name": "LimongiVirgil",
+            "email": "limongi.virgil@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
