@@ -54,9 +54,10 @@ include 'inc/homepage/header.php';
         </div>
         <?php $allPost = App\Entity\Post::allPost();
           foreach ($allPost as $post):
+          $user = App\Entity\Bdd::getUserbyIdPost($post->id_post());
         ?>
         <div class="publication">
-          <div class="contenu"><?= $post->content(); ?></div>
+          <div class="contenu"><?= $user->pseudo() . ' : ' . $post->content(); ?></div>
         </div>
         <?php endforeach; ?>
 

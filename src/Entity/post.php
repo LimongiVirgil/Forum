@@ -56,4 +56,7 @@ class Post {
     }
     return $allPost;
   }
+
+  
+
 }

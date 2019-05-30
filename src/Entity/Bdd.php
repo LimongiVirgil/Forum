@@ -55,23 +55,16 @@ class Bdd {
     return $user;
   }
 
-  /* public static function addFlash(string $type, string $content) : void {
-    //Rajouter un élèment en fin de tableau
-    //$tableau[] = $val; 
-    $_SESSION['flash'][] = [
-      'type' => $type,
-      'content' => $content,
-    ];
+  public static function getUserbyIdPost($idPost) {
+    $bdd = self::connect()->prepare("SELECT * FROM react where id_post = :idPost");
+    $bdd->execute(['idPost' => $idPost]);
+    $react = $bdd->fetch();
+    $bdd = self::connect()->prepare("SELECT * FROM utilisateur where id = :idUser");
+    $bdd->execute(['idUser' => $react['id_user'] ]);
+    $userSQL = $bdd->fetch();
+    $user = new User($userSQL['id'],$userSQL['pseudo'],$userSQL['mdp'],$userSQL['email']);
+    return $user;
   }
-
-  public static function getFlashes() : array {
-    if (isset($_SESSION['flash'])) {
-      $messages = $_SESSION['flash'];
-      unset($_SESSION['flash']);
-      return $messages;
-    }
-    return [];
-  } */
 }
 
 

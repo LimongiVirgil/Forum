@@ -7,7 +7,7 @@
   <img src="inc/img/logo-connexion.png" alt="logo connexion">
   <?php
   if (isset($_SESSION['user'])) {
-
+    echo $_SESSION['user']->pseudo();
     echo '<h2>Vous êtes déconnécté</h2>'; 
     session_destroy();
 

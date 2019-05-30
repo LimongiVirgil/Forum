@@ -45,5 +45,4 @@ class React {
       'id_post' => $idPost,
     ]);
   }
-
 }
