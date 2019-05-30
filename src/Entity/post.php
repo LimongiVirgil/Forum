@@ -28,20 +28,24 @@ class Post {
 
   //Les requêtes
 
-  public function addPost() {
+  public function addPost($idUser) {
     $bdd = Bdd::connect()->prepare('INSERT INTO post (id_post, content) VALUES (:id_post, :content)');
-    /* $userID = new App\Entity\User;
-    $user = $userID->id();
-    $bddPost = Bdd::connect()->prepare('INSERT INTO react '); */
     $bdd->execute([
       'id_post' => $this->id_post,
       'content' => $this->content,
     ]);
+    
+    $lastIdPost = Bdd::getLastIdPost();
+    $post = $bdd->fetch();
+    $bdd = Bdd::connect()->prepare('INSERT INTO react (id_user, id_post) VALUES (:id_user, :id_post)');
+    $bdd->execute([
+      'id_user' => $idUser,
+      'id_post' => $lastIdPost[0] 
+    ]);
   }
 
-  public static function allPost()
-  {
-    $bdd = Bdd::connect()->query("SELECT * FROM post order by id_post desc;");
+  public static function allPost() {
+    $bdd = Bdd::connect()->query("SELECT * FROM post ORDER BY id_post DESC LIMIT 7;");
     $allPostSQL = $bdd->fetchAll();
     $allPost = [];
     foreach ($allPostSQL as $value) {

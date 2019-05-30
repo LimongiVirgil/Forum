@@ -9,7 +9,7 @@ class Repository {
     $bdd = $pdo->prepare();
 
     $bdd->fetch(PDO::FETCH_CLASS, 'User');
-  };
+  }
 }
 
 //bin param

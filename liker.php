@@ -1,5 +1,11 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require 'bootstrap.php';
 
-$bdd = new App\Entity\Like();
+
+$liker = new App\Entity\Like($_SESSION['user']->id());
+if ($liker->Like() != null) {
+  $liker->deleteLike();
+} else {
+  $liker->addLike();
+}

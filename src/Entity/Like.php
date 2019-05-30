@@ -37,5 +37,36 @@ class Like {
 
   //Les requêtes
 
-  
+  public function addLike() {
+    $bdd = Bdd::connect()->prepare("  INSERT INTO react VALUES (:id_user, :id_post)");
+    $bdd->execute(
+      [
+        'id_user'      => $this->id_user,
+        'id_post'    => $this->id_post
+      ]
+    );
+  }
+
+  public function deleteLike() {
+    $bdd = Bdd::connect()->prepare(" DELETE FROM react WHERE id_user = :id_user and id_post = :id_post");
+    $bdd->execute(
+      [
+        'id_user'      => $this->id_user,
+        'id_post'    => $this->id_post
+      ]
+    );
+  }
+
+  public function Like() {
+    $bdd = Bdd::connect()->prepare(" SELECT * FROM react
+    WHERE id_user = :id_user and id_post = :id_post");
+    $bdd->execute(
+      [
+        'id_user'      => $this->id_user,
+        'id_post'    => $this->id_post
+      ]
+    );
+    $user = $bdd->fetch();
+    return $user;
+  }
 }

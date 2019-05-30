@@ -32,6 +32,12 @@ class Bdd {
     }
   }
 
+  public static function getLastIdPost() {
+    $bdd = self::connect()->query("SELECT LAST_INSERT_ID() FROM post");
+    $lastId = $bdd->fetch();
+    return $lastId;
+  }
+
   public static function userPseudo($pseudo)
   {
     $bdd = self::connect()->prepare("SELECT * FROM utilisateur WHERE pseudo = :pseudo");
@@ -49,7 +55,7 @@ class Bdd {
     return $user;
   }
 
-  public static function addFlash(string $type, string $content) : void {
+  /* public static function addFlash(string $type, string $content) : void {
     //Rajouter un élèment en fin de tableau
     //$tableau[] = $val; 
     $_SESSION['flash'][] = [
@@ -65,7 +71,7 @@ class Bdd {
       return $messages;
     }
     return [];
-  }
+  } */
 }
 
 

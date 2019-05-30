@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require 'bootstrap.php';
 
 $bdd = new App\Entity\Bdd();
 $user = $bdd->userPseudo($_POST['pseudo'])->pseudo();

@@ -1,6 +1,5 @@
 <?php 
-session_start();
-require_once __DIR__ . '/vendor/autoload.php';
+require 'bootstrap.php';
 include 'inc/homepage/header.php';
 ?>
 
@@ -59,11 +58,11 @@ include 'inc/homepage/header.php';
         <div class="publication">
           <div class="contenu"><?= $post->content(); ?></div>
         </div>
-      <?php endforeach; ?>
+        <?php endforeach; ?>
 
           <form action="message.php" class="input" method="POST">
             <input class="tchat__message" type="text" name="content" placeholder="Ecrire un message..." required>
-            <input class="tchat__valider" type="submit" name="submit" placeholder="Envoyer">
+            <input class="tchat__valider" type="submit" name="submit" value="Envoyer">
           </form>
         </div>
       </div>
@@ -147,7 +146,9 @@ include 'inc/homepage/header.php';
             tout, c'est faire découvrir de nouvelles saveurs. Si vous souhaitez voyagez, c'est avec plaisir que je vous
             partage mes découvertes !</p>
         </div>
-        <img class="profil__pictos" src="inc/img/pictos.png" alt="pictogrammes like et partage">
+        <form action="liker.php">
+          <input action="liker.php" class="profil__pictos" type="submit" name="like" value="Liker">
+        </form>
       </div>
     </div>
 
