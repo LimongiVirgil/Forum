@@ -1,19 +1,18 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
-include 'inc/header.php';
+include 'inc/inscription/header.php';
 ?>
 
-<div>
-  <h2>Ajoutez un membre</h2>
-  <form action="register.php" method="POST">
-    <input type="text" name="email" placeholder="Email" required/>
-    <input type="text" name="pseudo" placeholder="Pseudo" required/>
-    <input type="password" name="mdp" placeholder="Mot de passe" required/>
-    <input type="submit" name="form_insert" required/>
+<div class="inscription">
+<img src="inc/img/logo-connexion.png" alt="logo connexion">
+  <h2>S'inscrire</h2>
+  <form action="register.php" method="POST" class="form">
+    <input class="input" type="text" name="email" placeholder="Email" required/>
+    <input class="input" type="text" name="pseudo" placeholder="Pseudo" required/>
+    <input class="input" type="password" name="mdp" placeholder="Mot de passe" required/>
+    <input class="input input--orange" type="submit" name="form_insert" value="Inscription" required/>
   </form>
 </div>
 
-
-<h2><?php $message ;?></h2>
-
-<?php include 'inc/footer.php';?>
+</body>
+</html>

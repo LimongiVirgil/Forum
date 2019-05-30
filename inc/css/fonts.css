@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Thin.woff2') format('woff2'),
+      url('HelveticaNeue-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Light.woff2') format('woff2'),
+      url('HelveticaNeue-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'The Only Exception';
+  src: url('TheOnlyException.woff2') format('woff2'),
+      url('TheOnlyException.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

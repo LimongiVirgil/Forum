@@ -1,0 +1,48 @@
+body {
+  background-image: url('../img/background-connexion.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connexion {
+  height: 550px;
+  background-color: white;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form {
+  height: 240px;;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Helvetica Neue';
+  justify-content: space-evenly;
+}
+
+.input {
+  width: 300px;
+  padding: 15px 20px 15px 20px;
+  border-radius: 30px; 
+  font-size: 16px;
+}
+
+.input--orange {
+  background-color: #E67D1C;
+  color: white;
+  font-size: 16px;
+}
+
+.input--orange:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
